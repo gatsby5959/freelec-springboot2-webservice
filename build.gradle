@@ -22,21 +22,33 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    //jcenter()
+//    jcenter()
 }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-//    compile('org.projectlombok:lombok')
-//    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-//    compile('org.springframework.boot:spring-boot-starter-mustache')
-//    compile('com.h2database:h2')
-//
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+    compile('com.h2database:h2')
+
 //    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 //    compile('org.springframework.session:spring-session-jdbc')
-//
+
 //    compile("org.mariadb.jdbc:mariadb-java-client")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 //    testCompile("org.springframework.security:spring-security-test")
+
+
+    //# lombok plugin
+    implementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+
+    //# test 환경
+    testImplementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+    //출처: https://inpa.tistory.com/entry/IntelliJ-💽-Lombok-설치-방법-오류-해결 [Inpa Dev 👨‍💻:티스토리]
+
+    implementation 'org.springframework.boot:spring-boot-devtools'
 }
