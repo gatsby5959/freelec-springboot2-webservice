@@ -16,6 +16,7 @@ script: "./gradlew clean build"
 
 
 before_deploy:
+  - chmod +x gradlew #jgh240123 추가
   - zip -r springboot-web-practise *
   - mkdir -p deploy
   - mv springboot-web-practise.zip deploy/springboot-web-practise.zip
