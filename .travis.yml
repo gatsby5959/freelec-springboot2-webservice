@@ -14,6 +14,27 @@ cache:
 
 script: "./gradlew clean build"
 
+
+before_deploy:
+  - zip -r springboot-web-practise *
+  - mkdir -p deploy
+  - mv springboot-web-practise.zip deploy/springboot-web-practise.zip
+
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: kchung1995-springboot-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
+#출처: https://katfun.tistory.com/165 [하고 싶은 것을 즐겁게:티스토리]
+
+
+
 #CI 실행 완료 시 메일로 알림
 notifications:
   email:
