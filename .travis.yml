@@ -23,8 +23,8 @@ before_deploy:
 
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: AKIA43I4CVXCK3B6NIMX  #$AWS_ACCESS_KEY
+    secret_access_key: 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 #$AWS_SECRET_KEY
     bucket: kchung1995-springboot-build
     region: ap-northeast-2
     skip_cleanup: true
